@@ -1,0 +1,29 @@
+<% include partials/header %>
+
+<!-- Blog Post (Right Sidebar) Start -->
+<div class="col-sm-8 col-md-9">
+<div class="col-md-12 page-body">
+    <div class="row">
+
+            <div class="jumbotron" style="text-align: center">
+                    <h1>Page Not Found <small><font face="Tahoma" color="red">Error 404</font></small></h1>
+                    <br />
+                    <p>
+                            <button class="btn btn-warning" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                    Click for detail error msg
+                                  </button>
+                    </p>
+                   
+                          <div class="collapse" id="collapseExample">
+                            <div class="well well-sm">
+                                <span>
+                                        <%= error %></span>
+                            </div>
+                          </div>
+
+                    
+                    <p class="lead">The page you requested could not be found, either contact your webmaster or try again. Use your browsers <b>Back</b> button to navigate to the page you have prevously come from</p>
+                    <a href="/" class="btn btn-large btn-info"><i class="icon-home icon-white"></i> Take Me Home</a>
+            </div>
+              
+<% include partials/footer %>

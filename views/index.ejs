@@ -1,0 +1,43 @@
+<% include partials/header %>
+    
+<!-- Blog Post (Right Sidebar) Start -->
+<div class="col-sm-8 col-md-9">
+<div class="col-md-12 page-body">
+        <div class="row">
+        <div class="sub-title">
+        <h2>My Blog</h2>
+        <a href="/articleEntryForm"><i class="icon-plus" data-toggle="popover" data-placement="left" data-trigger="hover" data-content="Add a Article"></i></a>
+        </div>
+        <div class="col-md-12 content-page">
+        <% if (articles) { %>
+                <% for(var i=0; i<articles.length; i++) {%>
+                <!-- Blog Post Start -->  
+                <div class="col-md-12 blog-post">
+                        <div class="post-title">
+                        <a href="/single/<%= articles[i].id%>">
+                                <h1><%= articles[i].title%></h1>
+                        </a>
+                        </div>
+                                <div class="post-info">
+                                <span><%= articles[i].date%>  by <span class="color-6"><%= articles[i].author%></span></span>
+                        </div>
+                <p>
+                        <%-  articles[i].description %>
+                </p>
+                <a href="/single/<%= articles[i].id%>" class="button button-style button-anim fa fa-long-arrow-right"><span>Read More</span></a>
+                </div>
+                <!-- Blog Post End -->
+                <%}%>
+        <% } %>
+        
+
+        </div>
+
+        <div class="col-md-12 margin-top-20 margin-bottom-20 text-center">
+                <a href="javascript:void(0)" id="load-more-post" class="load-more-button" data-toggle="popover" data-placement="right" data-trigger="hover" data-content="Dynamic load content through Ajax">Load</a>
+                <div id="post-end-message"></div>
+        </div>
+
+        </div>
+                  
+<% include partials/footer %>

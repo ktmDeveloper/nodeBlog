@@ -1,0 +1,36 @@
+﻿<% include partials/header %>
+
+          <!-- Blog Post (Right Sidebar) Start -->
+          <div class="col-md-9">
+            <div class="col-md-12 page-body">
+              <div class="row">
+                <div class="sub-title">
+                  <a href="/" title="Go to Home Page">
+                    <h2>Back Home</h2>
+                  </a>
+                </div>
+                <div class="col-md-12 content-page">
+                  <div class="col-md-12 blog-post">
+                    <!-- Post Headline Start -->
+                    <div class="post-title">
+                      <h1><%= article.title%></h1>
+                    </div>
+                    <!-- Post Headline End -->
+                    <!-- Post Detail Start -->
+                    <div class="post-info">
+                      <span><%= article.date%> by <a href="#" target="_blank"><%= article.author%></a></span>
+                    </div>
+                    <!-- Post Detail End -->
+                    <div class="well well-sm">
+                      <p><%-article.description%></p>
+                    </div>
+
+                    <!--  main article Start -->
+                    <%- article.article%>
+                    <!--  main article End -->
+                    
+                  </div>
+                </div>
+              </div>
+<% include partials/footer %>
+              
