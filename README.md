@@ -1,5 +1,5 @@
 # nodeBlog
-## A simple blog where you can create blogs.
+## A simple app to create blogs.
 ### Uses NodeJS, Express and MongoDB
 
 ```
