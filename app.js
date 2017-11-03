@@ -65,7 +65,9 @@ app.use('/', blogRouter);
 app.use('/single', singleRouter);
 app.use('/auth', authRouter);
 
-app.listen(3000, function(){
+app.set('port', (process.env.PORT || 3000));
+
+app.listen(app.get('port'), function(){
     console.log('running...');
 })
 
