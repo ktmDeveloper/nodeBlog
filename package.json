@@ -8,6 +8,7 @@
     "start": "node app.js"
   },
   "dependencies": {
+    "babel": {"presets": ["es2015","react","stage-2"]},
     "body-parser": "*",
     "connect-flash": "^0.1.1",
     "cookie-parser": "^1.4.3",
