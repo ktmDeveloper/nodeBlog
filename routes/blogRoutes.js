@@ -44,14 +44,57 @@ return blogCtrl.list(req, res);
 ], function(req,res){
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-    
+        var article = {
+        author: req.body.author,
+        date: req.body.date,
+        title: req.body.title,
+        article: req.body.article,
+        description: req.body.description,
+        email: req.body.email
+        }
        return res.render('articleEntryForm',{
-            title:'customer',
+            title:'Enter Article',
             user: req.user,
+            article: article,
             errors: errors.mapped() //send new index with errors
         });
     } else {
         return blogCtrl.create(req, res);
+    }
+})
+.post('/blogs/update',[
+    //validator
+    check('date','Date should ASCII Chars').isLength({ min: 1 }).isAscii(),
+    check('title','Title should only contain letters').isLength({ min: 1 }).isAscii(),
+    check('description','Article should ASCII Chars').isLength({ min: 1 }).isAscii(),
+    check('description','NO script tag!').isLength({ min: 1 }).not().matches(/<[^>]*script/), 
+    check('article','Article should ASCII Chars').isLength({ min: 1 }).isAscii(),
+    check('article','NO script tag!').isLength({ min: 1 }).not().matches(/<[^>]*script/), //no scrip tag
+    check('email','Enter a valid email address').isLength({ min: 1 }).isEmail(),
+    check('author','Author should only contain letters').isLength({ min: 1 }).isAscii()
+    
+], function(req,res){
+    var id = req.body.articleId;
+    console.log(id + 'from edit page')
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        var article = {
+        author: req.body.author,
+        date: req.body.date,
+        title: req.body.title,
+        article: req.body.article,
+        description: req.body.description,
+        email: req.body.email
+        }
+       return res.render('articleEntryForm',{
+            title:'Enter Article',
+            user: req.user,
+            article: article,
+            typeOfBlog: "update",
+            errors: errors.mapped() //send new index with errors
+        });
+    } else {
+        return blogCtrl.update(req, res, id);
     }
 });
 

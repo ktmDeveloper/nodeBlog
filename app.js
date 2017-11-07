@@ -54,6 +54,8 @@ app.use(function(req,res,next){
     res.locals.data = null;
     res.locals.title = null;
     res.locals.articles = null;
+    res.locals.article = null;
+    res.locals.typeOfBlog = null;
     res.locals.entryAdded = null;
     res.locals.message = null;
     res.locals.user = null;
