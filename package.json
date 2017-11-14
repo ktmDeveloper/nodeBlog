@@ -21,8 +21,5 @@
     "socket.io": "^2.0.4"
   },
   "author": "shalindra shrestha",
-  "license": "ISC",
-  "engines": {
-    "node": "7.7.3"
-  }
+  "license": "ISC"
 }
