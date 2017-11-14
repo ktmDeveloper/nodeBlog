@@ -25,10 +25,12 @@ return blogCtrl.list(req, res);
         res.redirect('/login');
     } //if not logged in, send to login page.
 
-    res.render('articleEntryForm',{
-        title: 'Add a Article',
-        user: req.user
-    });
+    if(req.user){
+        res.render('articleEntryForm',{
+            title: 'Add a Article',
+            user: req.user
+        });
+    }
 })
 .post('/blogs/add',[
     //validator
