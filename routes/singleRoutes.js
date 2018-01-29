@@ -22,10 +22,12 @@ singleRouter
 .get('/delete/:id', function(req, res){
     if(!req.user){
         res.redirect('/login');
-    } //if not logged in, send to login page.
+    } else {
+        let id = req.params.id;
+        return blogCtrl.delete(req, res, id); 
+    }//if not logged in, send to login page.
 
-   let id = req.params.id;
-   return blogCtrl.delete(req, res, id);
+   
 });
 
 
