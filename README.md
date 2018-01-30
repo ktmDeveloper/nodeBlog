@@ -3,7 +3,9 @@
 ### Uses NodeJS, Express and MongoDB
 
 ```
-npm install
-npm start
+<https://nodeblogg.herokuapp.com/>
+Link to working version of the app. You Sign Up and create/update/delete a blog. Feel Free to look around.
+
+Thanks for visiting! 
 
 ```
