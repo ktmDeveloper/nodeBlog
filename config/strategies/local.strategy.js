@@ -6,9 +6,10 @@ var authCtrl = require("../../controller/auth.server.controller.js");
 module.exports = function(){
     passport.use(new passportLocal({
         usernameField : 'email',
-        passwordField : 'password'
+        passwordField : 'password',
+        passReqToCallback : true // allows us to pass back the entire request to the callback
     }, 
-    function(email, password, done){
+    function(req, email, password, done){
        authCtrl.fetch(email, password, done)
     }));
 
