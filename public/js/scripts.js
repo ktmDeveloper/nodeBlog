@@ -31,6 +31,8 @@
         /* initialize popover */
         $('[data-toggle="popover"]').popover();
 
+        
+
         /* Load More Post */
         $("#load-more-post").on('click', function(e) {
             e.preventDefault();
