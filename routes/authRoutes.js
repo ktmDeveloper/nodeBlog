@@ -26,12 +26,13 @@ authRoutes
             user: req.user
         });
     } else {
+        
         return authCtrl.create(req, res); 
     }
 })
 .post('/login/', passport.authenticate('local', {
                 failureRedirect: '/login',
-                failureFlash: true }),
+                failureFlash: 'Invalid password or username' }),
                 function(req, res){
                     res.redirect('/');
                 })

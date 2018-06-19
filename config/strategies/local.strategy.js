@@ -10,7 +10,7 @@ module.exports = function(){
         passReqToCallback : true // allows us to pass back the entire request to the callback
     }, 
     function(req, email, password, done){
-       authCtrl.fetch(email, password, done)
+       authCtrl.fetch(req, email, password, done)
     }));
 
 }
