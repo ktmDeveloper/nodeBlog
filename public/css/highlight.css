@@ -113,9 +113,7 @@ Railscasts-like style (c) Visoft, Inc. (Damien White)
 }
   
 @media only screen and (min-width: 960px){ 
-    pre.highlight{
-        text-align: center;
-    }
+   
     .hljs{
         display:inline-block;
     }
