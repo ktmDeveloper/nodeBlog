@@ -2,6 +2,7 @@ var blogEntry = require('../models/blog.server.model.js');
 
 exports.create = function(req, res){
     var newArticle = new blogEntry({
+        authorId: req.user._id,
         author: req.body.author,
         date: req.body.date,
         title: req.body.title,
