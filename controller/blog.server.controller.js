@@ -54,8 +54,8 @@ exports.list = function(req, res){
   };
 
   exports.loadMore = function(req, res, n){
-      var skinN = parseInt(n);
-    var query = blogEntry.find({}).skip(skinN).limit(1);
+      var skipN = parseInt(n);
+    var query = blogEntry.find().sort({createdOn: 'desc'}).skip(skipN).limit(1);
     query.exec(function(err, results){
         res.send(JSON.stringify(results));
     });
