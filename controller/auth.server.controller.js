@@ -2,7 +2,6 @@ var authModel = require('../models/auth.server.model.js');
 
 
 exports.create = function(req, res){
-    //console.log(authModel);
     // var newAuth = new authModel({
     //     email: req.body.email,
     //     firstName: req.body.firstName,

@@ -10,9 +10,8 @@ var flash = require('connect-flash');
 var app = express();
 
 
-//server and socketIO
+//server 
 var server = require('http').createServer(app);
-var socketIO = require('socket.io').listen(server);
 
 
 var blogRouter = require('./routes/blogRoutes.js');
@@ -77,26 +76,6 @@ app.set('port', (process.env.PORT || 3000));
 //app.set('port_ip', (process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1'));
 
 server.listen(app.get('port'), function(){
-    console.log('running...');
+    console.log('running... in port 3000');
 });
 
-var connections = [];
-//socketIO
-socketIO.on('connection', function(socket){
-    connections.push(socket);
-    console.log('connected: %s to socket', connections.length);
-
-    socket.on('disconnect', function(data){
-        connections.splice(connections.indexOf(socket), 1);
-        console.log('Disconnected: %s to socket', connections.length);
-    });
-
-    //send message
-    socket.on('send message', function(data){
-    // we tell the client to execute 'new message'
-    socketIO.emit('new message', {
-       // username: socket.username,
-        message: data
-      });
-    })
-})
