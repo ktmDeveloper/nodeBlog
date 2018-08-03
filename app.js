@@ -72,6 +72,9 @@ app.use('/', blogRouter);
 app.use('/single', singleRouter);
 app.use('/auth', authRouter);
 
+app.use(function (req, res, next) {
+    res.render('error', {error: 'The page you are requesting doesnot exist', title: 'Oops! Something went wrong', user: req.user})
+  })
 app.set('port', (process.env.PORT || 3000));
 //app.set('port_ip', (process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1'));
 
