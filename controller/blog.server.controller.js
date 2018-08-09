@@ -64,8 +64,10 @@ exports.list = function(req, res){
   exports.singleBlog = function(req, res, id){
     var query = blogEntry.findOne({ '_id': id });
       query.exec(function(err, results){
-          if(err){
+          if(err ){
             res.render('error', {error: err.message, title: 'Oops! Something went wrong', user: req.user})
+          } else if(results == null){
+            res.render('error', {error: 'page no longer exist', title: 'Oops! Something went wrong', user: req.user})
           } else {
             res.render('single', {article: results, title : results.title, user: req.user})
           }
