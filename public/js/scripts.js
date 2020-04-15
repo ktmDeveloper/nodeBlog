@@ -5,6 +5,7 @@
 
     jQuery(document).ready(function () {
 
+        console.log('testing');
         /* Preloader */
         $(window).load(function () {
             $('.preloader').delay(800).fadeOut('slow');
