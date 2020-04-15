@@ -23,6 +23,6 @@
   "author": "shalindra shrestha",
   "license": "ISC",
   "engines": {
-    "node": "8.9.4"
+    "node": "^10.14.1"
   }
 }
