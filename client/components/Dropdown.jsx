@@ -14,11 +14,7 @@ const Dropdown = ({ menu, setContentUrl }) => {
 
     useEffect(() => {
         if (activeUrl) {
-            fetch(activeUrl, {
-                headers: {
-                    'Authorization': 'token 85307d15276c0bf1c8105a20c549b0ab67b62bbe',
-                }
-            })
+            fetch(activeUrl)
                 .then(res => res.json())
                 .then(result => {
                     setIsLoaded(true);

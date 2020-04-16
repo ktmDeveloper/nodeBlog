@@ -12,11 +12,7 @@ const App = () => {
     const [contentUrl, setContentUrl] = useState('');
 
     useEffect(() => {
-        fetch(REPO_URL, {
-            headers: {
-                'Authorization': 'token 85307d15276c0bf1c8105a20c549b0ab67b62bbe',
-            }
-        })
+        fetch(REPO_URL)
             .then(res => res.json())
             .then(result => {
                 setIsLoaded(true);
