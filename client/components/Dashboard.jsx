@@ -10,7 +10,7 @@ const Dashboard = ({ contentUrl }) => {
         if (contentUrl) {
             fetch(contentUrl, {
                 headers: {
-                    'Authorization': 'token d30025e7f49627bf2517a530c98986491e3d146c',
+                    'Authorization': 'token 85307d15276c0bf1c8105a20c549b0ab67b62bbe',
                 }
             })
                 .then(res => res.json())
