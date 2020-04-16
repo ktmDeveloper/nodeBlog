@@ -32,6 +32,11 @@ return blogCtrl.list(req, res);
         });
     }
 })
+.get('/coding-challenges', function(req, res, next){
+    res.render('codingChallenges',{
+        title: 'Coding Challenges'
+    });
+})
 .post('/blogs/add',[
     //validator
     check('date','Date should ASCII Chars').isLength({ min: 1 }).isAscii(),

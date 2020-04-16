@@ -1,0 +1,22 @@
+<% include partials/header %>
+
+<!-- Blog Post (Right Sidebar) Start -->
+<div class="col-sm-8 col-md-9">
+    <div class="col-md-12 page-body">
+        <div class="row">
+            <div class="sub-title">
+                <div>
+                    <h2><a href="/">My Blog</a></h2>
+                    <h2><a href="/coding-challenges" class="active">Coding Challenges</a></h2>
+                </div>
+                <a href="/articleEntryForm"><i class="icon-plus" data-toggle="popover" data-placement="left"
+                        data-trigger="hover" data-content="Add a Article"></i></a>
+            </div>
+            <div class="col-md-12 content-page">
+                <!-- Client React Start -->
+                <div id="reactId"></div>
+                <!-- Client React End Start -->
+            </div>
+        </div>
+        <script src="/static/bundle.js"></script>
+<% include partials/footer %>
