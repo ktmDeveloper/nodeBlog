@@ -1,3 +1,6 @@
+// env variables
+require('dotenv').config();
+
 var express = require('express');
 var bodyParser = require('body-parser');
 var path = require('path');
@@ -45,8 +48,7 @@ var mongoose = require('mongoose');
 
 //connect to mongoDB
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://testUser:testPassword@ds157702.mlab.com:57702/standuptutorial', {
-        useMongoClient: true,
+mongoose.connect(process.env.MONGODB_URI || process.env.MONGO_CRED, {
          /* other options */
     });
 

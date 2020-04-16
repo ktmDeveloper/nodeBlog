@@ -1,3 +1,9 @@
 
 # Dependency directories
-node_modules/
+node_modules
+
+# webpack bundle
+public/bundle.js
+
+#env
+.env
