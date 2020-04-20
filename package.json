@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "develop":"webpack --config webpack.config.js --mode development --watch",
+    "develop": "webpack --config webpack.config.js --mode development --watch",
     "build": "webpack --config webpack.config.js --mode production",
     "start": "npm run build && node app.js"
   },
@@ -20,6 +20,7 @@
     "express-session": "1.15.6",
     "express-validator": "4.2.1",
     "mongoose": "5.9.9",
+    "node-fetch": "2.6.0",
     "passport": "0.4.0",
     "passport-local": "1.0.0",
     "react": "16.13.1",

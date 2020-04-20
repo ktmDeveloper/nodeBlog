@@ -20,6 +20,7 @@ var server = require('http').createServer(app);
 var blogRouter = require('./routes/blogRoutes.js');
 var singleRouter = require('./routes/singleRoutes.js');
 var authRouter = require('./routes/authRoutes.js');
+var ccRouter = require('./routes/codingChallenges.js');
 
 
 //view engine
@@ -73,6 +74,7 @@ app.use(function(req,res,next){
 app.use('/', blogRouter);
 app.use('/single', singleRouter);
 app.use('/auth', authRouter);
+app.use('/cc', ccRouter);
 
 app.use(function (req, res, next) {
     res.render('error', {error: 'The page you are requesting doesnot exist', title: 'Oops! Something went wrong', user: req.user})

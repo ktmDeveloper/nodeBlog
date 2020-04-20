@@ -1044,6 +1044,7 @@ blockquote {
 #reactId .dashboard {
     flex: 1;
     position: relative;
+    max-width: 560px;
 }
 @media only screen and (min-width:630px) {
     #reactId {
