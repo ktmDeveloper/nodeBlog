@@ -3,7 +3,7 @@
 node_modules
 
 # webpack bundle
-# public/bundle.js
+public/bundle.js
 
 #env
 .env
