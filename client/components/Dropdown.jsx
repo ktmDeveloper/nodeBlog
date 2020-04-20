@@ -14,7 +14,7 @@ const Dropdown = ({ menu, setContentUrl }) => {
 
     useEffect(() => {
         if (activeUrl) {
-            fetch(activeUrl)
+            fetch(`/cc?queryUrl=${activeUrl}`)
                 .then(res => res.json())
                 .then(result => {
                     setIsLoaded(true);

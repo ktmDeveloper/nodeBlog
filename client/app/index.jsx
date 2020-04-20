@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import Dropdown from '../components/Dropdown';
 import Dashboard from '../components/Dashboard';
 const PAGE_ID = document.getElementById('reactId');
-const REPO_URL = 'https://api.github.com/repos/ktmDeveloper/coding-challenges/contents';
 
 const App = () => {
     const [error, setError] = useState(null);
@@ -12,7 +11,7 @@ const App = () => {
     const [contentUrl, setContentUrl] = useState('');
 
     useEffect(() => {
-        fetch(REPO_URL)
+        fetch('/cc')
             .then(res => res.json())
             .then(result => {
                 setIsLoaded(true);

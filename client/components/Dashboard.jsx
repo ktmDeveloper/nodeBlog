@@ -8,7 +8,7 @@ const Dashboard = ({ contentUrl }) => {
 
     useEffect(() => {
         if (contentUrl) {
-            fetch(contentUrl)
+            fetch(`/cc?queryUrl=${contentUrl}`)
                 .then(res => res.json())
                 .then(result => {
                     setIsLoaded(true);
