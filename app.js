@@ -31,8 +31,14 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(cookieParser());
-app.use(session({secret: 'Auth'}));
 
+//https://stackoverflow.com/questions/40381401/when-to-use-saveuninitialized-and-resave-in-express-session
+app.use(session({
+    secret: 'Auth',
+    resave: false,
+    saveUninitialized: true,}));
+
+//https://stackoverflow.com/questions/40381401/when-to-use-saveuninitialized-and-resave-in-express-session
 
 //'flash' is used to flash error message in login page
 app.use(flash());
@@ -49,9 +55,7 @@ var mongoose = require('mongoose');
 
 //connect to mongoDB
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.MONGODB_URI || process.env.MONGO_CRED, {
-         /* other options */
-    });
+mongoose.connect(process.env.MONGODB_URI || process.env.MONGO_CRED, {useNewUrlParser: true, useUnifiedTopology: true});
 
 //import mongodb controller to insert, search, delete article
 var blogCtrl = require("./controller/blog.server.controller.js");
