@@ -1,0 +1,30 @@
+{
+    "parserOptions": {
+        "ecmaVersion": 2017,
+        "sourceType": "module"
+    },
+    "env": {
+        "es6": true,
+        "node": true,
+        "browser": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:prettier/recommended"
+    ],
+    "plugins": ["prettier"],
+    "ignorePatterns": ["node_modules"],
+    "rules": {
+        "prettier/prettier": "error",
+        "react/jsx-uses-react": "error",
+        "react/jsx-uses-vars": "error",
+        "react/prop-types": 0,
+        "no-unused-vars": 0
+    },
+    "settings": {
+        "react": {
+            "version": "detect"
+        }
+    }
+}
