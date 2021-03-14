@@ -1,12 +1,16 @@
 var express = require("express");
 var blogCtrl = require("../controller/blog.server.controller.js");
-
+var appInsights = require("applicationinsights");
 var blogRouter = express.Router();
 const { check, validationResult } = require("express-validator/check");
 const { matchedData, sanitize } = require("express-validator/filter");
 
 blogRouter
   .get("/", function (req, res) {
+    appInsights.defaultClient.trackMetric({
+      name: "Homepage for blog loaded. Params are in the value",
+      value: req.url,
+    });
     return blogCtrl.list(req, res);
   })
   .get("/moreData/:n", function (req, res) {
