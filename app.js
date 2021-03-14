@@ -1,3 +1,6 @@
+// env variables
+require("dotenv").config();
+
 let appInsights = require("applicationinsights");
 appInsights
   .setup(process.env.APPINSIGHTS_INSTRUMENTATIONKEY)
@@ -9,12 +12,13 @@ appInsights
   .setAutoCollectConsole(true)
   .setUseDiskRetryCaching(true)
   .setSendLiveMetrics(false)
+  .setAutoDependencyCorrelation(true)
   .setDistributedTracingMode(appInsights.DistributedTracingModes.AI)
   .start();
 
-// env variables
-require("dotenv").config();
-
+module.exports = {
+  appInsights: appInsights,
+}
 var express = require("express");
 var bodyParser = require("body-parser");
 var path = require("path");
